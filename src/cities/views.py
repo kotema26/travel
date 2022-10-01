@@ -20,7 +20,7 @@ def home(request, pk=None):
         form = CityForm(request.POST)
         if form.is_valid():
             print(form.cleaned_data)
-        form.save()
+            form.save()
     form = CityForm()  #Созд. экземпляр класса и передаем в словарь.
     qs = City.objects.all()  #Получаем QuerySet из модели.
     context = {"objects": qs, "form": form}  # Вставляем полученный кверисет в словарь.
