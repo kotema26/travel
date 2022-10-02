@@ -55,3 +55,6 @@ class CityDeleteView(DeleteView):
     model = City
     template_name = 'cities/delete.html'
     success_url = reverse_lazy('cities:home')
+
+    # def get(self, *args, **kwargs):
+    #     return self.post(*args, **kwargs)
