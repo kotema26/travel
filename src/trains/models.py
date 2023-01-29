@@ -21,4 +21,4 @@ class Train(models.Model):
     class Meta:
         verbose_name = 'Поезд'
         verbose_name_plural = 'Поезда'
-        ordering = ['travel_tim']
+        ordering = ['travel_time']
