@@ -23,4 +23,5 @@ urlpatterns = [
     path('', home, name='home'),
     path('about/', about),
     path('cities/', include(('cities.urls', 'cities'))),  # namespace - для пространства имен.
+    path('trains/', include(('trains.urls', 'trains'))),
 ]
