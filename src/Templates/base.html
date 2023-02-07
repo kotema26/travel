@@ -1,5 +1,7 @@
 {% url 'cities:home' as cities_home_url%}
+{% url 'cities:create' as cities_create_url%}
 {% url 'trains:home' as trains_home_url%}
+{% url 'trains:create' as trains_create_url%}
 <!doctype html>
 <html lang="ru">
   <head>
@@ -28,14 +30,14 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown
+        {% if request.path == cities_create_url or request.path == trains_create_url %} active {% endif %}">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
+            Добавить
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="{% url 'cities:create'%}">Город</a></li>
+            <li><a class="dropdown-item" href="{% url 'trains:create'%}">Поезд</a></li>
           </ul>
         </li>
       </ul>
